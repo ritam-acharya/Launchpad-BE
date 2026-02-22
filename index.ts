@@ -23,8 +23,10 @@ app.get("/api/v1/:_id", async (req, res) => {
         }
         console.log("token details : ", tokenDetails);
         res.status(200).json({
-            success: true,
-            message: tokenDetails
+            name: tokenDetails.name,
+            symbol: tokenDetails.symbol,
+            description: tokenDetails.description,
+            imageUrl: tokenDetails.imageUrl
         });
     }catch(error) {
         console.log(error);
