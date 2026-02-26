@@ -25,4 +25,56 @@ const tokenSchema = new Schema(
     }
 );
 
+
+const poolSchema = new Schema(
+    {
+        baseMint: {
+            type: String,
+            require: true
+        },
+        quoteMint: {
+            type: String,
+            require: true
+        },
+        baseTicker: {
+            type: String,
+            require: true
+        },
+        quoteTicker: {
+            type: String,
+            require: true
+        },
+        baseImg: {
+            type: String,
+            require: true
+        },
+        quoteImg: {
+            type: String,
+            require: true
+        },
+        baseDecimals: {
+            type: Number,
+            require: true
+        },
+        quoteDecimals: {
+            type: Number,
+            require: true
+        },
+        baseAmount: {
+            type: Number
+        },
+        quoteAmount: {
+            type: Number
+        },
+        poolAddress: {
+            type: String,
+            require: true
+        }
+    },
+    {
+        timestamps: true
+    }
+)
+
 export const Token = mongoose.model("Token", tokenSchema);
+export const Pool = mongoose.model("Pool", poolSchema);
